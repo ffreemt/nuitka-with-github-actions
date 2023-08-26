@@ -2,12 +2,12 @@ name: my workflow
 on: push
 
 jobs:
-  name-of-job:
+  job1:
     runs-on: windows-latest
     defaults:
       run:
         # shell: pwsh
-        shell: cmd
+        shell: bash
     steps:
       - name: Hello world
         run: |
