@@ -13,4 +13,4 @@ jobs:
         run: |
           REM write-output "Hello World"
           echo "Hello World"
-          echo 1 %GITHUB_WORKSPACE 2 %GITHUB_WORKSPACE%
+          echo 1 $GITHUB_WORKSPACE 2 ${{ github.workspace }}
