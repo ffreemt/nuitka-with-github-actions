@@ -14,3 +14,4 @@ jobs:
           REM write-output "Hello World"
           echo "Hello World"
           echo 1 $GITHUB_WORKSPACE 2 ${{ github.workspace }}
+          echo matrix.os: ${{ matrix.os }}
