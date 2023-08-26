@@ -1,0 +1,14 @@
+name: my workflow
+on: push
+
+jobs:
+  name-of-job:
+    runs-on: windows-latest
+    defaults:
+      run:
+        # shell: pwsh
+        shell: cmd
+    steps:
+      - name: Hello world
+        run: |
+          write-output "Hello World"
