@@ -3,6 +3,13 @@ on: push
 
 jobs:
   job1:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.8]
+        poetry-version: [1.5.1]
+        # os: [ubuntu-20.04, macos-latest, windows-latest]
+        os: [windows-latest]
     runs-on: windows-latest
     defaults:
       run:
