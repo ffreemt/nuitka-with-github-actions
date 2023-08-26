@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "nuitka-with-github-actions"
+version = "0.1.0"
+description = "Source code for a zhihu article"
+authors = ["ffreemt"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "nuitka_with_github_actions"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.31.0"
+loguru = "^0.7.0"
+rich = "^13.5.2"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.0.286"
+Nuitka = "^1.7.10"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
