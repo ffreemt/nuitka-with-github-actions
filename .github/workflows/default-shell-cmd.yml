@@ -7,7 +7,7 @@ jobs:
     defaults:
       run:
         # shell: pwsh
-        shell: bash
+        shell: cmd
     steps:
       - name: Hello world
         run: |
