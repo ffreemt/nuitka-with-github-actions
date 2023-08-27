@@ -24,7 +24,7 @@ jobs:
           echo "RELEASE_TAG=${GITHUB_REF#refs/tags/} >> $GITHUB_ENV"
           echo ${{ env.RELEASE_TAG }}
           echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
-          echo "Tag name from github.ref_name: ${{  github.ref_name }}"
+          # echo "Tag name from github.ref_name: ${{  github.ref_name }}"
           # echo 1: ${{ github.ref_name }} or 2:  $GITHUB_REF_NAME or 3: ${{env.GITHUB_REF_NAME}}
       - name: "Use RELEASE_TAG"
         run: |
