@@ -3,7 +3,9 @@ name: compile-hello-world  # yamllint disable-line rule:document-start
 
 on:  # yamllint disable-line rule:truthy
   push:
-
+    tags:
+      - "test*"  # for testing
+      - "v*"
 jobs:
   build:
     strategy:
