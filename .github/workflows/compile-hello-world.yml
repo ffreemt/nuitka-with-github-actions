@@ -1,6 +1,13 @@
 # yamllint disable rule:line-length rule:comments-indentation
 name: compile-hello-world  # yamllint disable-line rule:document-start
 
+          # echo "RELEASE_TAG=${{ GITHUB_REF#refs/tags/ }}"
+          # echo "RELEASE_TAG=${GITHUB_REF#refs/tags/} >> $GITHUB_ENV"
+          # echo ${{ env.RELEASE_TAG }}
+          # echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
+          # echo "Tag name from github.ref_name: ${{  github.ref_name }}"
+          # echo 1: ${{ github.ref_name }} or 2:  $GITHUB_REF_NAME or 3: ${{env.GITHUB_REF_NAME}}
+
 on:  # yamllint disable-line rule:truthy
   push:
     tags:
@@ -23,7 +30,7 @@ jobs:
       - name: "Determine tag"
         run: |
           echo Add other actions to build
-
+          echo "Tag name from github.ref_name: ${{  github.ref_name }}"
       - name: "Use RELEASE_TAG"
         run: |
           echo "The release tag is $RELEASE_TAG"
