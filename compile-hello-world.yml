@@ -1,0 +1,26 @@
+# yamllint disable rule:line-length rule:comments-indentation
+name: compile-hello-world  # yamllint disable-line rule:document-start
+
+on:  # yamllint disable-line rule:truthy
+  push:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.8]
+        poetry-version: [1.5.1]
+        # os: [ubuntu-20.04, macos-latest, windows-latest]
+        os: [windows-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: "Determine tag"
+        run: |
+          echo "RELEASE_TAG=${GITHUB_REF#refs/tags/}"
+          echo "RELEASE_TAG=${GITHUB_REF#refs/tags/} >> $GITHUB_ENV"
+          # echo ${{ env.RELEASE_TAG }}
+      - name: "Use RELEASE_TAG"
+        run: |
+          echo "The release tag is $RELEASE_TAG"
