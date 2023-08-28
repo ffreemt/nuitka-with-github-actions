@@ -5,7 +5,7 @@ description = "Source code for a zhihu article"
 authors = ["ffreemt"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "nuitka_with_github_actions"}]
+# packages = [{include = "nuitka_with_github_actions"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
