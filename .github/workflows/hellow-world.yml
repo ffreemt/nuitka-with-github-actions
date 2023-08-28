@@ -40,9 +40,9 @@ jobs:
       # testrun
       - name: Test run hello-world.exe
         run: |
-          dir build\hello-world.exe
-          ls build\hello-world.exe
-          build\hello-world.exe
+          dir build\\hello-world.exe
+          ls build/hello-world.exe
+          build/hello-world.exe
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
