@@ -64,13 +64,13 @@ jobs:
           path: use-pyqt5.dist
 
       # testrun
-      - name: Test run qwen7b-tr.exe
+      - name: Test run use-pyqt5.exe
         run: |
           dir use-pyqt5.dist
           use-pyqt5.dist\use-pyqt5.exe
 
-      # - name: Zip the Build
-        # run: zip -r ${{ secrets.ReleaseZipName }} ./AppName/bin/Release/netcoreapp3.1/
+      - name: Zip the Build
+        run: zip -r use-pyqt5-${{  github.ref_name }}.zip .\use-pyqt5.dist
 
       # - name: Create Release
         # id: create_release
