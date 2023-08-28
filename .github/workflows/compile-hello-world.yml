@@ -46,5 +46,5 @@ jobs:
       # not necessary if using Nuitka/Nuitka-Action@main
       - name: Install dependencies
         run: poetry install
-      _ name test gh
+      _ name: test gh
         run: gh --version
