@@ -34,3 +34,15 @@ jobs:
       - name: "Use RELEASE_TAG"
         run: |
           echo Use RELEASE_TAG
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+      - uses: abatilo/actions-poetry@v2.0.0
+        with:
+          poetry-version: ${{ matrix.poetry-version }}
+
+      # not necessary if using Nuitka/Nuitka-Action@main
+      - name: Install dependencies
+        run: poetry install

@@ -35,16 +35,16 @@ jobs:
       - uses: abatilo/actions-poetry@v2.0.0
         with:
           poetry-version: ${{ matrix.poetry-version }}
-      - name: ls-dir
-        run: |
-          dir
+
       # not necessary if using Nuitka/Nuitka-Action@main
       - name: Install dependencies
         run: poetry install
-
       - name: nuitka build
         run: |
-          poetry run python -m nuitka --standalone --assume-yes-for-downloads `
+          # poetry run python -m nuitka --onefile --assume-yes-for-downloads --nofollow-imports --follow-import-to=qwen7b_tr qwen7b-tr.py
+          poetry run python -m nuitka `
+          --mingw64 `
+          --standalone --assume-yes-for-downloads `
           --enable-plugin=pyqt5 `
           use-pyqt5.py
 
