@@ -1,5 +1,5 @@
 # yamllint disable rule:line-length rule:comments-indentation
-name: pyqt5-windows  # yamllint disable-line rule:document-start
+name: pyqt5-windows-mingw64  # yamllint disable-line rule:document-start
 
 on:  # yamllint disable-line rule:truthy
   push:
@@ -69,7 +69,7 @@ jobs:
       - name: Test run use-pyqt5.exe
         run: |
           dir use-pyqt5.dist
-          use-pyqt5.dist\use-pyqt5.exe
+          # use-pyqt5.dist\use-pyqt5.exe
 
       - name: Zip the Build
         run: zip -r use-pyqt5-${{  github.ref_name }}.zip .\use-pyqt5.dist

@@ -33,7 +33,7 @@ jobs:
           echo "Tag name from github.ref_name: ${{  github.ref_name }}"
       - name: "Use RELEASE_TAG"
         run: |
-          echo Use RELEASE_TAG
+          echo Use RELEASE_TAG ${{  github.ref_name }}
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:

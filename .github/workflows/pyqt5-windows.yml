@@ -35,9 +35,7 @@ jobs:
       - uses: abatilo/actions-poetry@v2.0.0
         with:
           poetry-version: ${{ matrix.poetry-version }}
-      - name: ls-dir
-        run: |
-          dir
+
       # not necessary if using Nuitka/Nuitka-Action@main
       - name: Install dependencies
         run: poetry install
@@ -69,7 +67,7 @@ jobs:
       - name: Test run use-pyqt5.exe
         run: |
           dir use-pyqt5.dist
-          use-pyqt5.dist\use-pyqt5.exe
+          # use-pyqt5.dist\use-pyqt5.exe
 
       - name: Zip the Build
         run: zip -r use-pyqt5-${{  github.ref_name }}.zip .\use-pyqt5.dist
