@@ -1,0 +1,53 @@
+# This is a basic workflow to help you get started with Actions
+
+name: simple
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: ["main"]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "nuitka-build"
+  nuitka-build:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.8]
+        poetry-version: [1.5.1]
+        # for easily switching to another os
+        # os: [ubuntu-20.04, macos-latest, windows-latest]
+        os: [windows-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        # default shell for windows is pwsh
+        shell: bash
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+
+      - uses: Nuitka/Nuitka-Action@main
+        with:
+          nuitka-version: main
+          script-name: hello-world.py
+
+      # testrun
+      - name: Test run use-pyqt5.exe
+        run: |
+          dir hello-world.dist
+          # hello-world.dist\hello-world.exe
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          echo $GITHUB_WORKSPACE  ${{ github.workspace }}
