@@ -12,6 +12,7 @@ python = "^3.8"
 requests = "^2.31.0"
 loguru = "^0.7.0"
 rich = "^13.5.2"
+pyqt5 = "^5.15.9"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.0.286"
