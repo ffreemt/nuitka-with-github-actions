@@ -34,7 +34,3 @@ jobs:
       - name: "Use RELEASE_TAG"
         run: |
           echo Use RELEASE_TAG
-          # echo "RELEASE_TAG=${{ GITHUB_REF#refs/tags/ }}"
-          # echo "The release tag is $RELEASE_TAG"
-          # echo "RELEASE_VERSION=${{GITHUB_REF#refs/*/}}"
-          # echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
