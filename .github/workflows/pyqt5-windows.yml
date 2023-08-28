@@ -70,7 +70,7 @@ jobs:
           # use-pyqt5.dist\use-pyqt5.exe
 
       - name: Zip the Build
-        run: zip -r use-pyqt5-${{  github.ref_name }}.zip .\use-pyqt5.dist
+        run: tar acf use-pyqt5-${{  github.ref_name }}.zip .\use-pyqt5.dist
 
       # - name: Create Release
         # id: create_release
